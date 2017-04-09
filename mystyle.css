@@ -1,31 +1,38 @@
 @charset "utf-8";
 /* CSS Document */
 
-@import url('https://fonts.googleapis.com/css?family=Space+Mono:700');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Mono');
 
 
 .w3-button {
-	font-family: 'Space Mono', monospace;
-	font-size:13px;
+	font-family: 'Roboto Mono', monospace;
+	font-size:12px;
 	}
 
 .factsheet{
 	color: #E80B0F;}
 	
 header{
-	margin-bottom: 25px;
+	margin-bottom: 10px;
 }
 
 h5{
 	font-family:'Roboto';
 	}
 	
-#fullname{
+#fullname, h6{
+	font-family: "Oswald";
 	text-transform: uppercase;
 	font-weight:bold;
 	}	
-#cardfooter{
+	
+
+.cardfooter{
 	font-family: 'Roboto Mono', monospace;
 	font-size:12px;
+}
+
+#buttons{
+	margin-bottom: 15px;
 }
