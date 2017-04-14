@@ -41,14 +41,21 @@
                  <div class="w3-container w3-light-gray">
                    <h5><strong>Undergraduate Admission</strong></h5>
                  </div>
-                 <div class="w3-container w3-tiny w3-light-gray">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
-                       <span class="w3-xxlarge w3-text-red"><b>HOO</b></span>
-                    </p>
-                    <p><del>$400</del> <span class="w3-tag w3-yellow">New!</span><br>
-                       Now only $299 !!!
-                    </p>
+                 <div class="w3-container w3-light-gray">
+                <table>
+                          <tr>
+                            <td><span>Applied</span></td>
+                            <td><span>100</span></td>
+                          </tr>
+                          <tr>
+                            <td><span>Admitted</span></td>
+                            <td><span>100</span></td>
+                          </tr>
+                          <tr>
+                            <td><span>Enrolled</span></td>
+                            <td><span>100</span></td>
+                          </tr>
+                </table>
                  </div>
                  <div class="w3-container w3-light-gray">
                     <p class="w3-center cardfooter">Click for more</p>
@@ -161,14 +168,21 @@
                  <div class="w3-container w3-light-gray">
                     <h5><b>Graduate Admissions</b></h5>
                  </div>
-                 <div class="w3-container w3-tiny w3-light-gray">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
-                       <span class="w3-xxlarge w3-text-red"><b>HOO</b></span>
-                    </p>
-                    <p><del>$400</del><br>
-                       Now only $299 !!!
-                    </p>
+                 <div class="w3-container w3-light-gray">
+                    <table>
+                          <tr>
+                            <td><span>Applied</span></td>
+                            <td><span>100</span></td>
+                          </tr>
+                          <tr>
+                            <td><span>Admitted</span></td>
+                            <td><span>100</span></td>
+                          </tr>
+                          <tr>
+                            <td><span>Enrolled</span></td>
+                            <td><span>100</span></td>
+                          </tr>
+                </table>
                  </div>
                  <div class="w3-container w3-light-gray">
                    <p class="w3-center cardfooter">Click for more</p>
@@ -405,6 +419,14 @@
  <script>
          
 		 $(".mycard").flip();
+
+     $("a").each(function(){
+    var rowHeight = $(this).height();
+    while ($(this).height() === rowHeight) {
+        $(this).append(" .");
+    }
+    $(this).html($(this).html().slice(0,-2));
+});
      
   </script> 
 </body>
