@@ -73,4 +73,9 @@ table {
   	
   	td:last-child span{
 	padding-left:.25em;
-	}
+}
+
+h6{
+
+	font-size: 20px;
+}
