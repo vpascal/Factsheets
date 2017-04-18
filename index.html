@@ -8,14 +8,15 @@
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
      <link rel="stylesheet" href="mystyle.css">
      <script src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
-	 <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
- 	 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	   <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+ 	   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
 	<script type="text/javascript">
 
 		google.charts.load('current', {packages: ['corechart', 'bar']});
 		google.charts.setOnLoadCallback(drawChart);	
+    google.charts.setOnLoadCallback(drawLineChart);
 
 		function drawChart() {
 
@@ -42,9 +43,43 @@
                        'height':145};
 
           
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.ColumnChart(document.getElementById('degrees'));
-        chart.draw(data,options);
+       var chart = new google.visualization.ColumnChart(document.getElementById('degrees'));
+       chart.draw(data,options);
+      }
+
+
+
+      function drawLineChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Year');
+        data.addColumn('number', 'Rate');
+        data.addRows([
+          ['2011', 13],
+          ['2012', 17],
+          ['2013', 16],
+          ['2014',27],
+          ['2015',29]
+       
+        ]);
+
+    var options = {legend: {position: 'none'},
+            vAxis:{
+                  textPosition: 'none'
+
+       },
+
+       backgroundColor: '#f1f1f1',
+       colors: ['#515151'],
+                       'width':275,
+                       'height':145};
+
+       var chart = new google.visualization.LineChart(document.getElementById('gradrate'));
+       chart.draw(data,options);
+
+       var chart = new google.visualization.LineChart(document.getElementById('diversity'));
+       chart.draw(data,options);
       }
   
 	</script>
@@ -59,7 +94,7 @@
 <div class="w3-content w3-main" style="max-width:1200x;margin-top:30px; margin-bottom:30px;">
   
    
-  	<header class="w3-row-padding w3-center " id="myheader">
+  	<header class="w3-row-padding w3-center w3-animate-zoom" id="myheader">
     	<h1 class="w3-xxxlarge" id="fullname">Department|<span class="factsheet">Factsheets</span></h1>
         <h6>Facts and Figures </h6>
     </header>
@@ -79,7 +114,7 @@
      
   <div class="w3-row-padding">
           
-           <div class="w3-third">
+           <div class="w3-third w3-animate-zoom">
               <div class="card mycard">
               <div class="front">
                  <div class="w3-container w3-light-gray">
@@ -109,13 +144,10 @@
                  <div class="w3-container w3-light-gray">
                    <h5><strong>Undergraduate Admission</strong></h5>
                  </div>
-                 <div class="w3-container w3-tiny w3-light-gray">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
-                       <span class="w3-xxlarge w3-text-red"><b>HOO</b></span>
-                    </p>
-                    <p><del>$400</del> <span class="w3-tag w3-yellow">New!</span><br>
-                       Now only $299 !!!
+                 <div class="w3-container w3-small w3-light-gray">
+                    <p>This indicator includes number of undegraduate students (1) who applied to the Patton College (2) those admitted to the College and (3) those who were 
+                      enrolled in the College.
+                      The data covers academic year of 2015-16.
                     </p>
                  </div>
                  <div class="w3-container w3-light-gray">
@@ -167,14 +199,13 @@
                  <div class="w3-container w3-light-gray">
                    <h5><b>Retention Rate</b></h5>
                  </div>
-                 <div class="w3-container w3-tiny w3-light-gray">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
-                       <span class="w3-xxlarge w3-text-red"><b>HOO</b></span>
-                    </p>
-                    <p><del>$400</del> <span class="w3-badge ">6</span><br>
-                       Now only $299 !!!
-                    </p>
+                 <div class="w3-container w3-tiny w3-light-gray w3-center">
+
+                      <img id="gauge"
+                                            src="gauge.svg" 
+                                            height="80px"
+                                            width="100px" />
+                     <h6 class="w3-xxlarge"> 84% </h6>                       
                  </div>
                  <div class="w3-container w3-light-gray">
                     <p class="w3-center cardfooter">Click for more</p>
@@ -200,7 +231,7 @@
            </div>
          </div>
            
-    <div class="w3-third">
+    <div class="w3-third w3-animate-zoom">
               <div class="card mycard">
                 <div class="front">
                  <div class="w3-container w3-light-gray">
@@ -230,13 +261,10 @@
                  <div class="w3-container w3-light-gray">
                    <h5><strong>Graduate Admissions</strong></h5>
                  </div>
-                 <div class="w3-container w3-tiny w3-light-gray">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
-                       <span class="w3-xxlarge w3-text-red"><b>HOO</b></span>
-                    </p>
-                    <p><del>$400</del> <span class="w3-tag w3-yellow">New!</span><br>
-                       Now only $299 !!!
+                 <div class="w3-container w3-small w3-light-gray">
+                      <p>This indicator includes number of graduate students (1) who applied to the Patton College (2) those admitted to the College and (3) those who were 
+                      enrolled in the College.
+                      The data covers academic year of 2015-16.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </p>
                  </div>
                  <div class="w3-container w3-light-gray">
@@ -252,14 +280,10 @@
                  <div class="w3-container w3-light-gray">
                    <h5><b>Graduation Rate</b></h5>
                  </div>
-                 <div class="w3-container w3-tiny w3-light-gray">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
-                       <span class="w3-xxlarge w3-text-red"><b>HOO</b></span>
-                    </p>
-                    <p><del>$400</del> <span class="w3-tag w3-yellow">New!</span><br>
-                       Now only $299 !!!
-                    </p>
+                 <div class="w3-container w3-tiny w3-light-gray" id="gradrate">
+                    
+
+
                  </div>
                  <div class="w3-container w3-light-gray">
                     <p class="w3-center cardfooter">Click for more</p>
@@ -292,14 +316,14 @@
                  <div class="w3-container w3-light-gray">
                    <h5><b>Student-Faculty Ratio</b></h5>
                  </div>
-                 <div class="w3-container w3-tiny w3-light-gray">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
-                       <span class="w3-xxlarge w3-text-red"><b>HOO</b></span>
-                    </p>
-                    <p>Before <del>$400</del><br>
-                       Now only $299 !!!
-                    </p>
+                 <div class="w3-container w3-tiny w3-light-gray w3-center">
+                    
+                    <img id="gauge"
+                                            src="classroom.svg" 
+                                            height="80px"
+                                            width="100px" />
+                     <h6 class="w3-xxlarge"> 21:1 </h6>       
+
                  </div>
                  <div class="w3-container w3-light-gray">
                     <p class="w3-center cardfooter">Click for more</p>
@@ -328,7 +352,7 @@
            
            </div>
            
-           <div class="w3-third">
+           <div class="w3-third w3-animate-zoom">
               <div class="card mycard">
                  <div class="front">
                  <div class="w3-container w3-light-gray">
@@ -362,14 +386,11 @@
                  <div class="w3-container w3-light-gray">
                    <h5><strong>Enrollment</strong></h5>
                  </div>
-                 <div class="w3-container w3-tiny w3-light-gray">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
-                       <span class="w3-xxlarge w3-text-red"><b>HOO</b></span>
+                 <div class="w3-container w3-small w3-light-gray">
+                    <p>This indicator includes number of enrolled students during Fall semester. This number shows a breakdown by sex and includes all (graduate and undergraduate) students at the Athens campus.
+                      The data covers academic year of 2015-16.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </p>
-                    <p><del>$400</del> <span class="w3-tag w3-yellow">New!</span><br>
-                       Now only $299 !!!
-                    </p>
+
                  </div>
                  <div class="w3-container w3-light-gray">
                     <p class="w3-center cardfooter">Click to return</p>
@@ -385,14 +406,9 @@
                  <div class="w3-container w3-light-gray">
                    <h5><b>Student Diversity</b></h5>
                  </div>
-                 <div class="w3-container w3-tiny w3-light-gray ">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
-                       <span class="w3-xxlarge"><b>HOO</b></span>
-                    </p>
-                    <p>Before <del>$400</del><br>
-                       Now only $299 !!!
-                    </p>
+                 <div class="w3-container w3-tiny w3-light-gray" id="diversity">
+                   
+
                  </div>
                  <div class="w3-container w3-light-gray">
                     <p class="w3-center cardfooter">Click for more</p>
@@ -425,13 +441,16 @@
                    <h5><b>Student Support</b></h5>
                  </div>
                  <div class="w3-container w3-tiny w3-light-gray">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
-                       <span class="w3-xxlarge w3-text-red"><b>HOO</b></span>
-                    </p>
-                    <p><del>$400</del> <span class="w3-tag w3-yellow">New!</span><br>
-                       Now only $299 !!!
-                    </p>
+                    <p class="w3-small">Percent Receiving<br>
+                       Financial Aid <span class="w3-right w3-small"><strong>45%</strong><br>
+                   </p>
+                  <p class="w3-small">Number of Students<br>
+                       Awarded Travel Funding <span class="w3-right w3-small"><strong>15</strong><br>
+                   </p>
+                    <p class="w3-small">Travel Funding
+                       (Amount) <span class="w3-right w3-small w3-bold"><strong>$8,000</strong>
+                       <br><br>
+                   </p>
                  </div>
                  <div class="w3-container w3-light-gray">
                     <p class="w3-center cardfooter">Click for more</p>
@@ -443,8 +462,8 @@
                    <h5><strong>Student Support</strong></h5>
                  </div>
                  <div class="w3-container w3-tiny w3-light-gray">
-                    <p>The Newest<br>
-                       <i><b>triple-action</b></i><br>
+                    <p>PercentReceiving<br>
+                       <i><b>Financial Aid</b></i><br>
                        <span class="w3-xxlarge w3-text-red"><b>HOO</b></span>
                     </p>
                     <p><del>$400</del> <span class="w3-tag w3-yellow">New!</span><br>
@@ -460,9 +479,17 @@
     </div>
   </div>
           <br>
-           <footer> <h5> Content for New footer Tag Goes Here</h5></footer>
+              
+           
      </div>
-     
+    <footer class="w3-center"> 
+      <br>
+         <img  
+                                            src="logo.svg" 
+                                            height="135px"
+                                            width="135px" />
+
+    </footer> 
      
  <script>
          
